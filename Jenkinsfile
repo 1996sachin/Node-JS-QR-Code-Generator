@@ -10,7 +10,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/1996sachin/Node-JS-QR-Code-Generator.git
+                git branch: 'main', url: 'https://github.com/1996sachin/Node-JS-QR-Code-Generator.git'
             }
         }
 
