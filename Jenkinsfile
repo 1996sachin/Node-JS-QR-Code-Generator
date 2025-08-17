@@ -23,8 +23,11 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                echo 'Starting Node.js QR Code Generator with PM2...'
-                sh 'npx pm2 start index.js --name qr-generator || npx pm2 restart qr-generator'
+                sh '''
+                   pm2 delete qr-app || true
+                   pm2 start index.js --name qr-app
+                   pm2 save
+                   '''
             }
         }
     }
